@@ -8,6 +8,7 @@ import { User } from './users/user/user';
 import { UsersService } from './users/users.service';
 import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { UsersModule } from './users/users.module';
         logging: true,
       }),
     }),
-    UsersModule,   // 💡 imports your Users logic correctly
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],   // 💡 only AppController here
   providers: [AppService],        // 💡 only AppService here
